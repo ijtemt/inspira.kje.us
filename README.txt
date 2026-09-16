@@ -1,4 +1,4 @@
-INSPIRA Academic Publishing static website
+INSPIRA - International Publishing House static website
 
 Upload all files/folders to the same GitHub Pages repository.
 The pages reference the existing css/, js/, lib/ and img/ folders from your original template.

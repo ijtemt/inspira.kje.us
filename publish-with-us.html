@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>INSPIRA Academic Publishing | Books, Research & Educational Publications</title>
+    <title>INSPIRA - International Publishing House | Books, Research & Educational Publications</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="INSPIRA Academic Publishing is an online academic and educational publishing house for books, research monographs, textbooks, case studies and learning resources." name="description">
-    <meta content="academic publishing, educational publishing, books, textbooks, research monographs, case studies, INSPIRA Academic Publishing" name="keywords">
+    <meta content="INSPIRA - International Publishing House is an online academic and educational publishing house for books, research monographs, textbooks, case studies and learning resources." name="description">
+    <meta content="academic publishing, educational publishing, books, textbooks, research monographs, case studies, INSPIRA - International Publishing House" name="keywords">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -31,7 +31,7 @@
         <div class="row px-lg-5">
             <div class="col-lg-8 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-book mr-2"></i>INSPIRA Academic Publishing</small>
+                    <small><i class="fa fa-book mr-2"></i>INSPIRA - International Publishing House</small>
                     <small class="px-3">|</small>
                     <small><i class="fa fa-globe mr-2"></i>Online Academic & Educational Publisher</small>
                 </div>
@@ -55,7 +55,7 @@
                 <h1 class="m-0 text-uppercase text-primary">
                     <i class="fa fa-book-reader mr-3"></i>INSPIRA
                 </h1>
-                <small class="d-block text-muted ml-5" style="margin-top:-6px;">Academic Publishing</small>
+                <small class="d-block text-muted ml-5" style="margin-top:-6px;">International Publishing House</small>
             </a>
 
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -92,7 +92,7 @@
     <!-- Page Hero Start -->
     <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 70px;">
         <div class="container text-center my-5 py-5">
-            <h4 class="text-white mt-4 mb-3">INSPIRA Academic Publishing</h4>
+            <h4 class="text-white mt-4 mb-3">INSPIRA - International Publishing House</h4>
             <h1 class="text-white display-4 mb-3">Publish With Us</h1>
         </div>
     </div>
@@ -100,9 +100,13 @@
 
     <section class="container py-5">
       <div class="row">
-        <div class="col-lg-7">
-          <div class="section-title position-relative mb-4"><h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Submission</h6><h1 class="display-4">Submit Your Book</h1></div>
-          <p>Authors may submit a proposal or completed manuscript for editorial consideration. Submission does not guarantee publication.</p>
+        <div class="col-lg-7 mb-5 mb-lg-0">
+          <div class="section-title position-relative mb-4">
+            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Submission</h6>
+            <h1 class="display-4">Submit Your Book</h1>
+          </div>
+          <p>Authors may submit a book proposal or completed manuscript for editorial consideration. Submission does not guarantee publication.</p>
+
           <h4 class="mt-4">Please prepare</h4>
           <ul>
             <li>Author name, affiliation and contact information</li>
@@ -113,20 +117,127 @@
             <li>Author CV/profile</li>
             <li>Declaration regarding originality and third-party materials</li>
           </ul>
+
           <h4 class="mt-4">Publishing process</h4>
           <p><strong>Submit → Editorial Assessment → Review/Development → Production → Publication → Distribution</strong></p>
+
+          <div class="alert alert-info mt-4">
+            <i class="fa fa-info-circle mr-2"></i>
+            <strong>File limit:</strong> The current free FormSubmit service supports a combined file size of up to 10 MB per submission. Larger manuscripts can be submitted using a cloud-storage link in the description field.
+          </div>
         </div>
+
         <div class="col-lg-5">
-          <div class="bg-light p-4">
-            <h4>Manuscript Enquiry Form</h4>
-            <p class="text-muted">This is a static form in the current GitHub Pages version. Connect it to Formspree, Google Forms or a PHP backend later.</p>
-            <form action="#" method="post">
-              <input class="form-control mb-3" type="text" placeholder="Author Name" required>
-              <input class="form-control mb-3" type="email" placeholder="Email Address" required>
-              <input class="form-control mb-3" type="text" placeholder="Proposed Book Title" required>
-              <select class="form-control mb-3"><option>Choose Category</option><option>Computer Science & IT</option><option>Engineering & Technology</option><option>Agriculture & Technology</option><option>Management & Business</option><option>Research & Monographs</option><option>Education & Learning</option></select>
-              <textarea class="form-control mb-3" rows="5" placeholder="Brief description"></textarea>
-              <button type="submit" class="btn btn-primary btn-block py-3">Submit Enquiry</button>
+          <div class="bg-light p-4 shadow-sm">
+            <h4 class="mb-3">Manuscript Submission Form</h4>
+            <p class="text-muted mb-4">
+              Complete this form and attach your proposal/manuscript. After submission, the editorial team can contact you using the email address provided.
+            </p>
+
+            <!--
+              IMPORTANT:
+              Replace YOUR_EMAIL@example.com below with the email address where
+              INSPIRA should receive manuscript submissions.
+
+              After the first submission, FormSubmit will send a confirmation
+              email to that address. Confirm it once, and future submissions
+              will be delivered automatically.
+            -->
+            <form id="manuscriptForm"
+                  action="https://formsubmit.co/ajax/YOUR_EMAIL@example.com"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+              <input type="hidden" name="_subject" value="INSPIRA - International Publishing House - New Manuscript Submission">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_url" value="https://inspira.kje.us/publish-with-us.html">
+
+              <div class="form-group">
+                <label for="authorName">Author / Corresponding Author *</label>
+                <input id="authorName" class="form-control" type="text" name="author_name" placeholder="Full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input id="email" class="form-control" type="email" name="email" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="affiliation">Affiliation / Institution</label>
+                <input id="affiliation" class="form-control" type="text" name="affiliation" placeholder="University / Institution / Organization">
+              </div>
+
+              <div class="form-group">
+                <label for="title">Proposed Book Title *</label>
+                <input id="title" class="form-control" type="text" name="book_title" placeholder="Proposed title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="category">Subject / Category *</label>
+                <select id="category" class="form-control" name="category" required>
+                  <option value="" selected disabled>Choose Category</option>
+                  <option>Computer Science & IT</option>
+                  <option>Artificial Intelligence & Data Science</option>
+                  <option>Engineering & Technology</option>
+                  <option>Agriculture & Technology</option>
+                  <option>Management & Business</option>
+                  <option>Research & Monographs</option>
+                  <option>Education & Learning</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="bookType">Submission Type</label>
+                <select id="bookType" class="form-control" name="submission_type">
+                  <option>Book Proposal</option>
+                  <option>Completed Manuscript</option>
+                  <option>Textbook</option>
+                  <option>Edited Book</option>
+                  <option>Research Monograph</option>
+                  <option>Case Study Collection</option>
+                  <option>Lab Manual / Academic Resource</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Abstract / Brief Description *</label>
+                <textarea id="description" class="form-control" name="description" rows="5" placeholder="Describe the book, intended audience, key topics and approximate length." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="toc">Table of Contents / Chapter Outline</label>
+                <textarea id="toc" class="form-control" name="table_of_contents" rows="5" placeholder="Paste the chapter outline or table of contents."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="links">Additional Links</label>
+                <input id="links" class="form-control" type="url" name="additional_link" placeholder="Optional: Google Drive / OneDrive / Dropbox link">
+              </div>
+
+              <div class="form-group">
+                <label for="manuscript">Manuscript / Proposal File</label>
+                <input id="manuscript" class="form-control-file" type="file" name="manuscript" accept=".pdf,.doc,.docx,.odt,.zip">
+              </div>
+
+              <div class="form-group">
+                <label for="cv">Author CV (Optional)</label>
+                <input id="cv" class="form-control-file" type="file" name="author_cv" accept=".pdf,.doc,.docx">
+              </div>
+
+              <div class="form-group form-check">
+                <input class="form-check-input" type="checkbox" id="originality" name="originality_declaration" value="I confirm the submission is original and I have permission for third-party material." required>
+                <label class="form-check-label" for="originality">
+                  I confirm that the submitted material is original and that I have the necessary rights/permissions for third-party material. *
+                </label>
+              </div>
+
+              <button id="submitBtn" type="submit" class="btn btn-primary btn-block py-3">
+                <i class="fa fa-paper-plane mr-2"></i>Submit Manuscript
+              </button>
+
+              <div id="formMessage" class="mt-3" aria-live="polite"></div>
             </form>
           </div>
         </div>
@@ -143,7 +254,7 @@
                         </h1>
                     </a>
                     <p class="m-0">
-                        <strong class="text-white">INSPIRA Academic Publishing</strong><br>
+                        <strong class="text-white">INSPIRA - International Publishing House</strong><br>
                         Publishing Knowledge. Inspiring Learning.<br>
                         Books, research, educational resources and case-based learning.
                     </p>
@@ -199,7 +310,7 @@
             <div class="row">
                 <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
                     <p class="m-0">
-                        Copyright &copy; <a class="text-white" href="index.html">INSPIRA Academic Publishing</a>.
+                        Copyright &copy; <a class="text-white" href="index.html">INSPIRA - International Publishing House</a>.
                         All Rights Reserved. <span id="year"></span>
                     </p>
                 </div>
@@ -229,6 +340,56 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const form = document.getElementById('manuscriptForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            if (form.action.includes('YOUR_EMAIL@example.com')) {
+                formMessage.innerHTML = '<div class="alert alert-warning">The form is ready, but the publisher email has not yet been configured. Replace <strong>YOUR_EMAIL@example.com</strong> in this page with your actual INSPIRA email address.</div>';
+                return;
+            }
+
+            const files = [
+                document.getElementById('manuscript').files[0],
+                document.getElementById('cv').files[0]
+            ].filter(Boolean);
+
+            const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
+            const maxBytes = 10 * 1024 * 1024;
+
+            if (totalBytes > maxBytes) {
+                formMessage.innerHTML = '<div class="alert alert-danger">The selected files exceed the 10 MB total limit. Please reduce the file size or provide a cloud-storage link.</div>';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i>Submitting...';
+            formMessage.innerHTML = '';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Submission failed');
+                }
+
+                form.reset();
+                formMessage.innerHTML = '<div class="alert alert-success"><strong>Thank you.</strong> Your manuscript submission has been sent to INSPIRA - International Publishing House. We will contact you at the email address provided.</div>';
+            } catch (error) {
+                formMessage.innerHTML = '<div class="alert alert-danger">We could not submit the form automatically. Please check your internet connection or use the cloud-storage link field and contact INSPIRA.</div>';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa fa-paper-plane mr-2"></i>Submit Manuscript';
+            }
+        });
     </script>
 </body>
 </html>
